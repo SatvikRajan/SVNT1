@@ -1,180 +1,152 @@
-import React from 'react';
-import adityabirla from '../images/Home/aditya-birla.jpg';
-import vedanta from '../images/Home/vedanta.jpg';
+import React, { useEffect } from 'react';
 import '../css/about.css';
-import ITC from '../images/Home/itc.png';
-import gm from '../images/Home/gm.png';
 import ceo from '../images/AboutUs/ceo-image.png';
 import '../css/slider.css';
 import Managers from '../components/Managers';
-import aboutbg from '../images/AboutUs/about-bg.jpg'
+import TimeLine from '../components/Timeline'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Logo from '../images/svnt-logo-black-full.png';
+import { Link } from 'react-router-dom'
+import AboutCarousel from '../components/AboutCarousel';
+import aequs from '../images/AboutUs/client-aequs.svg'
+import allergan from '../images/AboutUs/client-allergan.svg'
+import ampath from '../images/AboutUs/client-ampath.svg'
+import kia from '../images/AboutUs/client-kia.svg'
+import brigade from '../images/AboutUs/client-brigade.svg'
+import esl from '../images/AboutUs/client-esl.svg'
+import gd from '../images/AboutUs/client-gd.svg'
+import akn from '../images/AboutUs/client-akn.svg'
+import hc from '../images/AboutUs/client-hc.svg'
+import itc from '../images/AboutUs/client-itc.svg'
+import indigo from '../images/AboutUs/client-indigo.svg'
+import afio from '../images/AboutUs/client-afio.svg'
+import abg from '../images/AboutUs/client-abg.svg'
+import gm from '../images/AboutUs/client-gm.svg'
+import britannia from '../images/AboutUs/client-britannia.svg'
+import vedanta from '../images/AboutUs/client-vedanta.svg'
+import Slider from "react-slick";
+
 export const About = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 300,
+      delay: 500
+    });
+  }, []);
+  const settings = {
+    arrows: false,
+    dots: false,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    speed: 6000,
+    rows: 2,
+    slidesPerRow: 3,
+    cssEase: "linear"
+  };
+
   return (
     <div className="about-us-page">
-      
+      <Link className="logo-brand" to="/">
+        <img src={Logo} alt="SVNT Tech" height={30} />
+      </Link>
       <div className="about-us-head">
-      <img className='about-img' src={aboutbg} style={{height: '100%', width: '100vw', objectFit: 'scale-down', marginTop: '1rem'}} alt="" />
+        <AboutCarousel />
+        {/* <img className='about-img' src={aboutbg} style={{ height: '100%', width: '100vw', objectFit: 'scale-down', marginTop: '1rem' }} alt="" /> */}
         <p className="about-us-head-name">
           Integrated Solutions,
           <br /> Empowered Choices
         </p>
         <p className="about-us-head-name1">We are the Blueprint</p>
       </div>
-      <div className="svnt-info">
-        SVNT Infotech Pvt Ltd, formerly known as S V Network Technologies, was established in 2003 with a singular
-        objective: to deliver cutting-edge IT infrastructure solutions across diverse industry verticals, including
-        power, steel, cement, petroleum, and defence. With our headquarters in Hyderabad, SVNT has strategically
-        positioned branches in key cities such as Delhi and Bangalore, ensuring a widespread presence.
-        <br />
-        <br /> Our founding philosophy at SVNT Infotech is rooted in addressing the unique needs of our customers
-        through the integration of top-tier international technology, complemented by local expertise. As a company
-        fully funded and managed by our dedicated employees, we take pride in boasting one of the highest employee
-        retention rates in the IT industry today. In the current dynamic landscape of technology, we are always on the
-        lookout to elevate the quality of our products.and communication solutions.
+      <div className="svnt-info" data-aos='fade-up'>
+        Established in 2003, SVNT Infotech Pvt Ltd set out on a mission to revolutionize IT infrastructure solutions.
+        Our philosophy is to combine international technology with local expertise to tailor solutions to clients needs. Driven by excellence, we aim to lead the global market in networking and communication solutions.
       </div>
 
-      <div className="company-timeline">
-        <h1>Company Timeline</h1>
-
-        <svg className='divider' width="1455" height="60" viewBox="0 0 1455 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="30" cy="30" r="30" transform="rotate(-90 30 30)" fill="#251741" />
-          <circle cx="495" cy="30" r="30" transform="rotate(-90 495 30)" fill="#251741" />
-          <circle cx="960" cy="30" r="30" transform="rotate(-90 960 30)" fill="#251741" />
-          <circle cx="1425" cy="30" r="30" transform="rotate(-90 1425 30)" fill="#251741" />
-          <line x1="60" y1="30" x2="465" y2="30" stroke="#251741" stroke-width="2" />
-          <line x1="525" y1="30" x2="945" y2="30" stroke="#251741" stroke-width="2" />
-          <line x1="990" y1="30" x2="1420" y2="30" stroke="#251741" stroke-width="2" />
-        </svg>
-
-        <div className='d-flex divider'>
-          <div className="circle"></div>
-          <div className="line"></div>
-          <div className="circle"></div>
-          <div className="line"></div>
-          <div className="circle"></div>
-          <div className="line"></div>
-          <div className="circle"></div>
-        </div>
-
-        <div className="d-flex timeline-1">
-          <div className="d-flex flex-column p-4">
-            <div>
-              <span style={{ fontSize: '38px' }}>2000 - 2003</span>
-              <br />
-              <span style={{ fontSize: '32px' }}>Company Spinout</span>
-              <br />
-              <span style={{ fontSize: '22px' }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna.
-              </span>
-            </div>
-            <div></div>
-          </div>
-
-          <div className="d-flex flex-column p-4">
-            <div style={{ paddingTop: '20rem' }}></div>
-            <div>
-              <span style={{ fontSize: '38px' }}>2000 - 2003</span>
-              <br />
-              <span style={{ fontSize: '32px' }}>Company Spinout</span>
-              <br />
-              <span style={{ fontSize: '22px' }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna.
-              </span>
-            </div>
-          </div>
-          <div className="d-flex flex-column p-4">
-            <div>
-              <span style={{ fontSize: '38px' }}>2000 - 2003</span>
-              <br />
-              <span style={{ fontSize: '32px' }}>Company Spinout</span>
-              <br />
-              <span style={{ fontSize: '22px' }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna.
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <TimeLine />
 
       <div className="ceo d-flex">
         <div className="ceo-text">
-          <h1 className="fs-1 ceo-text-head">Meet Our CEO </h1>
-          <p className="ceo-text-p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna. nisi ut aliquip exmmodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore . Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo.”
+          <h1 className="fs-1 ceo-text-head mb-3" data-aos='fade-down'>Meet Our Managing Director </h1>
+          <p className="ceo-text-p w-75" data-aos='fade-right'>
+            Opportunities don’t come knocking at your door, you must build your own door
           </p>
         </div>
-        <div className="ceo-photo">
+        <div className="ceo-photo" data-aos='fade-left'>
           <img className='ceo-photo-1' src={ceo} alt="" />
         </div>
       </div>
 
       <Managers />
-      <div className="slides">
-        <div class="slider">
-          <div class="slide-track">
-            <div class="slide-1">
-              <img className="me" src={adityabirla} alt="" />
+      <div className='about-clients'>
+        <h1 className='client-h1'>Clients</h1>
+        <div className="slider-container" style={{ marginTop: '4rem', textAlign: '-webkit-center',  marginBottom: '5rem' }}>
+          <Slider {...settings}>
+            <div>
+              <img src={aequs} alt="" />
             </div>
-            <div class="slide-1">
-              <img className="me" src={vedanta} alt="" />
+            <div>
+              <img src={allergan} alt="" />
             </div>
-            <div class="slide-1">
-              <img className="me" src={adityabirla} alt="" />
+            <div>
+              <img src={ampath} alt="" />
             </div>
-            <div class="slide-1">
-              <img className="me" src={vedanta} alt="" />
+            <div>
+              <img src={kia} alt="" />
             </div>
-            <div class="slide-1">
-              <img className="me" src={adityabirla} alt="" />
+            <div>
+              <img src={brigade} alt="" />
             </div>
-            <div class="slide-1">
-              <img className="me" src={vedanta} alt="" />
+            <div>
+              <img src={esl} alt="" />
             </div>
-            <div class="slide-1">
-              <img className="me" src={adityabirla} alt="" />
+            <div>
+              <img src={gd} alt="" />
             </div>
-            <div class="slide-1">
-              <img className="me" src={vedanta} alt="" />
+            <div>
+              <img src={akn} alt="" />
             </div>
-          </div>
-        </div>
-        {/* <br />
-        <br />
-        <br /> */}
-        <div class="slider">
-          <div class="slide-track">
-            <div class="slide-1">
-              <img className="me" src={ITC} alt="" />
+            <div>
+              <img src={hc} alt="" />
             </div>
-            <div class="slide-1">
-              <img className="me" src={gm} alt="" />
+            <div>
+              <img src={itc} alt="" />
             </div>
-            <div class="slide-1">
-              <img className="me" src={ITC} alt="" />
+            <div>
+              <img src={indigo} alt="" />
             </div>
-            <div class="slide-1">
-              <img className="me" src={gm} alt="" />
+            <div>
+              <img src={afio} alt="" />
             </div>
-            <div class="slide-1">
-              <img className="me" src={ITC} alt="" />
+            <div>
+              <img src={abg} alt="" />
             </div>
-            <div class="slide-1">
-              <img className="me" src={gm} alt="" />
+            <div>
+              <img src={gm} alt="" />
             </div>
-            <div class="slide-1">
-              <img className="me" src={ITC} alt="" />
+            <div>
+              <img src={britannia} alt="" />
             </div>
-            <div class="slide-1">
-              <img className="me" src={gm} alt="" />
+            <div>
+              <img src={vedanta} alt="" />
             </div>
-          </div>
+            <div>
+              <img src={itc} alt="" />
+            </div>
+            <div>
+              <img src={hc} alt="" />
+            </div>
+          </Slider>
         </div>
       </div>
+
     </div>
   );
 };

@@ -5,13 +5,17 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../css/contact.css'
 import axios from 'axios';
+import Logo from '../images/svnt-logo-black-full.png';
+import { Link } from 'react-router-dom'
+import { faLeftLong } from '@fortawesome/free-solid-svg-icons';
 
 const Contact = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
-      offset: 200,
+      offset: 300,
+      delay: 500
     });
   }, []);
 
@@ -47,20 +51,21 @@ const Contact = () => {
   return (
     <div className="contact-container">
       <div className="contact-image-container">
+        <Link className="logo-brand" to="/">
+          <img src={Logo} alt="SVNT Tech" height={30} />
+        </Link>
         <img src={contact} className="contact-image" alt="" />
-        <div className="text">Need assistance?<br/>
+        <div className="text">Need assistance?<br />
           How may we help you?</div>
       </div>
 
-      <div className="form-body " >
+      <div className="form-body" >
         <div className="write" data-aos="fade-right">
-          <h1 className='write-h1' style={{ color: '#0E1513', marginBottom: '22px', fontSize: '42px' }}>Contact Us</h1>
+          <h1 className='write-h1' style={{ marginBottom: '22px', fontSize: '42px' }}>Contact Us</h1>
           <p className="write1">
-            Feel free to contact us for inquiries,
-            <br /> feedback, or just a quick hello !
+            Wondering if SVNT is right for your business?<br/> Chat with our team to discover if we're the right fit.
             {/* Fix this */}
           </p>
-          <p className='write1'>Gain deeper insight into our services</p>
         </div>
         <div className="form-box" data-aos="fade-left">
           <form onSubmit={handleSubmit}>
@@ -106,6 +111,7 @@ const Contact = () => {
         </div>
       </div>
       <div className="location">
+        <h1 style={{textAlign: 'start', marginLeft: '8rem' ,paddingTop: '3rem'}}>Our Locations</h1>
         <h1 className="location-name">Head Office</h1>
         <div className="offices" data-aos='fade-up'>
           <LocationCard

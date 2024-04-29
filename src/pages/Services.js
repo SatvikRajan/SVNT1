@@ -2,31 +2,43 @@ import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../css/services.css';
-import wwdb1 from '../images/Services/wwdb-1';
-import wwdb2 from '../images/Services/wwdb-2.png';
-import wwdb3 from '../images/Services/wwdb-3.png';
-import wwdb4 from '../images/Services/wwdb-4.png';
-import wwdb5 from '../images/Services/wwdb-5';
-import wwdb6 from '../images/Services/wwdb-6';
-import wwdb7 from '../images/Services/wwdb-7';
-import wwdb8 from '../images/Services/wwdb-8';
+import wwdb1 from '../images/Home/IP-surveillance.svg';
+import wwdb2 from '../images/Home/IP-network.svg';
+import wwdb3 from '../images/Home/integration.svg';
+import wwdb4 from '../images/Home/audio-visual.svg';
+import wwdb5 from '../images/Home/security-and-mgmt.svg';
+import wwdb6 from '../images/Home/energy.svg';
+import wwdb7 from '../images/Home/surveillance-and-safety.svg';
+import wwdb8 from '../images/Home/storage.svg';
 import servicebg from '../images/Services/servicebg.png';
-import CarouselPhotos from '../components/CarouselPhotos';
+import IPSlider from '../components/Sliders/IPSSlider';
+import INSlider from '../components/Sliders/INSSlider';
+import IntegrationSlider from '../components/Sliders/IntegrationSlider';
+import AudioVisualSlider from '../components/Sliders/AudioVisualSlider';
+import SecuritySlider from '../components/Sliders/SecuritySlider';
+import EnergySlider from '../components/Sliders/EnergySlider';
+import SurveillanceSlider from '../components/Sliders/SurveillanceSlider';
+import StorageSlider from '../components/Sliders/StorageSlider';
+import Logo from '../images/svnt-logo-white-full.png';
+import { Link } from 'react-router-dom'
+
 const services = [
   { image: wwdb1, title: 'IP Surveillance Solution', details: 'An IP camera system is a closed-circuit TV (CCTV) that is network attached. IP camera systems can be utilized to enhance security measures and elevate safety in any sector ranging from healthcare, schools and businesses to industrial, military, and government organizations. Moreover, IP cameras also make it incredibly easy to access video feeds, which may', details1: 'be saved modified or examined using a PC. Video feeds from IP cameras can be monitored from any location on multiple devices simultaneously. These surveillance systems can have features customized to their requirements and be integrated into any organisations existing IT network effortlessly, thereby making it effective and hassle-free.' },
-  { image: wwdb2, title: 'IP Networking Solution', details: 'An IP camera system is a closed-circuit TV (CCTV) that is network attached. IP camera systems can be utilized to enhance security measures and elevate safety in any sector ranging from healthcare, schools and businesses to industrial, military, and government organizations. Moreover, IP cameras also make it incredibly easy to access video feeds, which may', details1: 'be saved modified or examined using a PC. Video feeds from IP cameras can be monitored from any location on multiple devices simultaneously. These surveillance systems can have features customized to their requirements and be integrated into any organisations existing IT network effortlessly, thereby making it effective and hassle-free.'},
-  { image: wwdb3, title: 'Integration Solutions', details: 'An IP camera system is a closed-circuit TV (CCTV) that is network attached. IP camera systems can be utilized to enhance security measures and elevate safety in any sector ranging from healthcare, schools and businesses to industrial, military, and government organizations. Moreover, IP cameras also make it incredibly easy to access video feeds, which may', details1: 'be saved modified or examined using a PC. Video feeds from IP cameras can be monitored from any location on multiple devices simultaneously. These surveillance systems can have features customized to their requirements and be integrated into any organisations existing IT network effortlessly, thereby making it effective and hassle-free.'},
-  { image: wwdb4, title: 'Audio-Visual', details: 'An IP camera system is a closed-circuit TV (CCTV) that is network attached. IP camera systems can be utilized to enhance security measures and elevate safety in any sector ranging from healthcare, schools and businesses to industrial, military, and government organizations. Moreover, IP cameras also make it incredibly easy to access video feeds, which may', details1: 'be saved modified or examined using a PC. Video feeds from IP cameras can be monitored from any location on multiple devices simultaneously. These surveillance systems can have features customized to their requirements and be integrated into any organisations existing IT network effortlessly, thereby making it effective and hassle-free.' },
-  
-  { image: wwdb6, title: 'Security & Management', details: 'An IP camera system is a closed-circuit TV (CCTV) that is network attached. IP camera systems can be utilized to enhance security measures and elevate safety in any sector ranging from healthcare, schools and businesses to industrial, military, and government organizations. Moreover, IP cameras also make it incredibly easy to access video feeds, which may', details1: 'be saved modified or examined using a PC. Video feeds from IP cameras can be monitored from any location on multiple devices simultaneously. These surveillance systems can have features customized to their requirements and be integrated into any organisations existing IT network effortlessly, thereby making it effective and hassle-free.'},
-  { image: wwdb8, title: 'Energy Solutions', details: 'An IP camera system is a closed-circuit TV (CCTV) that is network attached. IP camera systems can be utilized to enhance security measures and elevate safety in any sector ranging from healthcare, schools and businesses to industrial, military, and government organizations. Moreover, IP cameras also make it incredibly easy to access video feeds, which may', details1: 'be saved modified or examined using a PC. Video feeds from IP cameras can be monitored from any location on multiple devices simultaneously. These surveillance systems can have features customized to their requirements and be integrated into any organisations existing IT network effortlessly, thereby making it effective and hassle-free.' },
-  { image: wwdb7, title: 'Surveillance and Safety', details: 'An IP camera system is a closed-circuit TV (CCTV) that is network attached. IP camera systems can be utilized to enhance security measures and elevate safety in any sector ranging from healthcare, schools and businesses to industrial, military, and government organizations. Moreover, IP cameras also make it incredibly easy to access video feeds, which may', details1: 'be saved modified or examined using a PC. Video feeds from IP cameras can be monitored from any location on multiple devices simultaneously. These surveillance systems can have features customized to their requirements and be integrated into any organisations existing IT network effortlessly, thereby making it effective and hassle-free.' },
-  { image: wwdb5, title: 'Storage', details: 'An IP camera system is a closed-circuit TV (CCTV) that is network attached. IP camera systems can be utilized to enhance security measures and elevate safety in any sector ranging from healthcare, schools and businesses to industrial, military, and government organizations. Moreover, IP cameras also make it incredibly easy to access video feeds, which may', details1: 'be saved modified or examined using a PC. Video feeds from IP cameras can be monitored from any location on multiple devices simultaneously. These surveillance systems can have features customized to their requirements and be integrated into any organisations existing IT network effortlessly, thereby making it effective and hassle-free.' }
-  
+  { image: wwdb2, title: 'IP Networking Solution', details: 'The setup of devices connected to a network and how they interact depend entirely on the networks purpose. Different organisations have different priorities. It might be a small network linking a few devices at home or work, or a large corporate network with thousands of devices. IP networks dont just help with communication, like emails and web browsing,', details1: 'but also make it easy to share information and resources. They are an essential facet of our daily digital activities.' },
+  { image: wwdb3, title: 'Integration Solutions', details: 'Enhance operational productivity and elevate quality standards by accelerating information flow and reducing costs within your organization. Our system integration solutions seamlessly integrate with both new and existing hardware, ensuring a cohesive environment. We simplify sharing information, communication, and collaboration among different machines ', details1: 'with our machine integration solutions, removing unnecessary complexities. Computer Telephony Integration (CTI) automates call handling processes, providing valuable insights for continuous improvement. Bridge the communication gap between telephone and computer systems through our telephone integration services.' },
+  { image: wwdb4, title: 'Audio-Visual', details: 'We provide state-of-the-art audio-visual products and solutions to seamlessly integrate audio, video, display, lighting equipment, and system controls. Our AV solutions cater to various applications, including conference rooms, auditoriums, cafeterias, classrooms, etc.Our process automation solutions use technology to automate repetitive tasks, hence ', details1: 'increasing productivity and saving time. Additionally, our digital signage solutions use a network of digital displays and mounting systems to create dynamic and attention-grabbing content. They are valuable assets to the entertainment, merchandise, and advertising industries.' },
+
+  { image: wwdb6, title: 'Security & Management', details: 'As businesses expand, the natural progression involves upscaling their IT networks to meet evolving needs and requirements. Performing a comprehensive network audit is essential to uncover any problems before they escalate and result in serious consequences.This can reveal security weaknesses that might harm the business in the long run. Various web ', details1: 'caching and priorities bandwidth management techniques can be utilised to improve the responsiveness of a website as well. Additionally, a firewall is crucial for overseeing incoming and outgoing network traffic, deciding whether to permit or block specific data streams based on the company' },
+  { image: wwdb8, title: 'Energy Solutions', details: 'Our UPS solution, or uninterruptible power supply solution, automatically provides backup electricity to devices during a power failure. This ensures that your servers and computers can continue operating without interruption during power outages. Additionally, our lightning solution helps implement advanced lightning protection systems to minimise ', details1: 'damage from lightning strikes. When it comes to solar solutions, our technology allows you to generate electricity and reduce your carbon footprint. By harnessing the power of the sun, you not only contribute to a cleaner environment by reducing CO2 emissions, but also generate substantial savings on your electric bill.' },
+  { image: wwdb7, title: 'Surveillance and Safety', details: 'Runway monitoring includes meticulously recording all aircraft movements and paths during take-off and landing to provide a detailed overview of all airport activities. This system, which includes strategically placed video cameras along the runway, is designed to detect malfunctions, equipment failures, or any evidence necessary for investigating accidents. On the ', details1: 'other hand, a fire alarm system serves as an essential component to ensuring safety to occupants in any environment. It is designed to promptly detect and alert occupants to potential threats such as smoke or fire.' },
+  { image: wwdb5, title: 'Storage', details: 'When it comes to storing data, services like NAS (Network Attached Storage) and SAN (Storage Area Network) help employees work together and respond to customer needs quickly. Its important for these resources to be accessible and easy to use, all while keeping costs low. Having a plan to deal with any unforeseen circumstances and backing up data is also ', details1: 'crucial for an organisation can continue to function with as little disruption as possible. Implementing a business continuity strategy prior to any potential disasters not only saves time and resources but also ensures a swift recovery.' }
+
 ];
+
 export default function Services() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentService = services[currentIndex];
+
   const onSecondPart = currentIndex >= 4;
   const handleClick = (index) => {
     setCurrentIndex(index === currentIndex ? null : index);
@@ -36,7 +48,8 @@ export default function Services() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      offset: 200
+      once: true,
+      offset: 300
     });
   }, []);
 
@@ -57,6 +70,9 @@ export default function Services() {
 
   return (
     <div className="services">
+      <Link className="logo-brand" to="/">
+        <img src={Logo} alt="SVNT Tech" height={30} />
+      </Link>
       <img style={{ position: 'relative', marginTop: '-0.5rem' }} src={servicebg} className='service-bg' alt="" />
       <p className='service-text'>Expertise you can trust:<br /> Tailored solutions just for you!</p>
       <p className='service-head'>Gain deeper insight into our <span style={{ fontWeight: '500' }}>Services</span></p>
@@ -69,11 +85,10 @@ export default function Services() {
             alignItems: 'center'
           }}>
             <button style={{
-              height:'20px'
+              height: '20px'
             }} className='left' onClick={handlePrevPage} disabled={currentIndex >= services.length}></button>
             <div style={{
               width: "100%",
-              
               overflow: 'hidden'
             }}>
               <div className="d-flex services-main" style={{
@@ -88,9 +103,9 @@ export default function Services() {
                     style={{ position: 'relative', width: '12.5%' }}
                     className="service-name"
                   >
-                    <div className='d-flex mb-2 align-items-center' style={{gap: '0.5rem'}}>
+                    <div className='d-flex mb-2 align-items-center' style={{ gap: '0.5rem' }}>
                       <img className='service-img' src={service.image} alt="" />
-                      <p className='service-title-main' style={{ fontSize: '24px'}}>{service.title}</p>
+                      <p className='service-title-main' style={{ fontSize: '24px' }}>{service.title}</p>
                     </div>
                     <span
                       style={{
@@ -109,13 +124,12 @@ export default function Services() {
 
               </div>
             </div>
-            <button style={{height:'20px'}} className='right' onClick={handleNextPage} disabled={currentIndex >= services.length}></button>
+            <button style={{ height: '20px' }} className='right' onClick={handleNextPage} disabled={currentIndex >= services.length}></button>
           </div>
-          <div className='services-mainf' style={{ padding: '3rem' }}>
+          <div className="services-mainf" style={{ padding: '3rem', height: '35rem', marginTop: '1rem' }}>
             {currentService && (
               <div>
-
-                <div className="d-flex">
+                <div className="d-flex" style={{gap: '15px'}}>
                   <div className='services-ndetails' style={{ width: '70%' }}>
                     <div className="d-flex imgtit align-items-center">
                       <img className='service-img' src={currentService.image} alt="" />
@@ -123,9 +137,16 @@ export default function Services() {
                     </div>
                     <p className='service-details' style={{ fontSize: '24px', lineHeight: '54px', letterSpacing: '5%' }}>{currentIndex !== null ? services[currentIndex].details : currentService.details}</p>
                   </div>
-                  <CarouselPhotos />
+                  {currentService.title === 'IP Surveillance Solution' && <IPSlider />}
+                  {currentService.title === 'IP Networking Solution' && <INSlider />}
+                  {currentService.title === 'Integration Solutions' && <IntegrationSlider />}
+                  {currentService.title === 'Audio-Visual' && <AudioVisualSlider />}
+                  {currentService.title === 'Security & Management' && <SecuritySlider />}
+                  {currentService.title === 'Energy Solutions' && <EnergySlider />}
+                  {currentService.title === 'Surveillance and Safety' && <SurveillanceSlider />}
+                  {currentService.title === 'Storage' && <StorageSlider />}
                 </div>
-                <p className='service-details' style={{ fontSize: '24px', lineHeight: '50px', letterSpacing: '5%', marginTop: '-15px' }}>{currentIndex !== null ? services[currentIndex].details1 : currentService.details1}</p>
+                <p className='service-details' style={{ fontSize: '24px', lineHeight: '50px', letterSpacing: '5%', marginTop: '-13px' }}>{currentIndex !== null ? services[currentIndex].details1 : currentService.details1}</p>
               </div>
             )}
           </div>

@@ -1,4 +1,10 @@
 .location {
+  padding-bottom: 1rem;
+  background-color: #CDD4FD;
+  margin: 5rem;
+  border-radius: 80px;
+  margin-left: 8rem;
+  margin-right: 8rem;
   text-align: center;
 }
 .location-name {
@@ -7,6 +13,7 @@
 .offices {
   letter-spacing: 0.1px;
   border-radius: 20px;
+  
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
@@ -16,7 +23,7 @@
   border-radius: 20px;
   justify-content: center;
   display: flex;
-  gap: 30px;
+  gap: 90px;
   /* flex-wrap: wrap; */
   margin-bottom: 30px;
 }
@@ -34,6 +41,9 @@ a {
 a:hover {
   color: rgb(53, 53, 53);
 }
+.footer-email{
+  justify-content: center;
+}
 .footer {
   letter-spacing: 0px;
   padding-top: 50px;
@@ -49,10 +59,10 @@ a:hover {
   width: 30%;
   text-shadow: 2px 2px 5px black;
   text-align: start;
-  position: absolute;
+  position: relative;
   color: white;
   font-size: 35px;
-  top: 78%;
+  bottom: 15rem;
   left: 10%;
   font-weight: 600;
 }
@@ -75,7 +85,7 @@ a:hover {
   font-size: 19px;
 }
 .explore::before {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   width: 100%;
@@ -89,11 +99,11 @@ a:hover {
 }
 .explore::after {
   float: right;
-  content: '';
+  content: "";
   filter: invert();
   width: 30px; /* Adjust the width of the SVG */
   height: 20px; /* Adjust the height of the SVG */
-  background: url('../images/Vector.svg') no-repeat;
+  background: url("../images/Vector.svg") no-repeat;
   opacity: 0;
   transition: opacity 0.5s, transform 0.5s; /* Transition opacity and transform over 0.5 seconds */
   transform: translateX(-10px); /* Initially move the arrow to the left */
@@ -107,7 +117,7 @@ a:hover {
   transform: translateX(0); /* Move the arrow back to its original position */
 }
 .career-image {
-  background-image: url('');
+  background-image: url("");
   margin-top: 1rem;
   background-repeat: no-repeat;
   background-size: cover;
@@ -137,21 +147,16 @@ a:hover {
   padding: 100px;
 }
 .location-card {
-  background: linear-gradient(#f8f9ff, #ffffff);
   position: relative;
   width: 400px;
   height: 160px;
-  background-color: #f0f0f0;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px,
-    rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+    rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+    rgba(0, 0, 0, 0.07) 0px 16px 16px;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-
-.location-card:hover {
-  background-color: #ccc;
 }
 
 .card-content {
@@ -168,13 +173,14 @@ a:hover {
 
 .front,
 .back {
+  background-color: #F1FAFF;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(#f8f9ff, #ffffff);
   display: flex;
+  padding: 1rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -183,7 +189,6 @@ a:hover {
 
 .back {
   transform: translateY(100%);
-  background-color: #fff; /* Add a background color for better visibility */
 }
 
 .location-card.hovered .front {
@@ -208,11 +213,11 @@ a:hover {
 }
 .location-cardtitle {
   letter-spacing: 5%;
-  font-size: 27px;
+  font-size: 32px;
 }
 .location-cardaddress {
   letter-spacing: 5%;
-  line-height: 30px;
+  line-height: 24px;
 }
 .location-card:hover .copy-notification {
   color: #fff;
@@ -227,4 +232,126 @@ a:hover {
 
 .location-card:nth-child(3) {
   box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.career-img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  padding: 2rem;
+  margin-top: -1.5rem;
+}
+.recruitment-h {
+  text-align: start;
+  padding-left: 18rem;
+}
+.phn{
+  color: #E9E8EC !important;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background-color: rgb(37, 23, 65, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #F1FAFF;
+  z-index: 2; 
+}
+
+.overlay-text {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+
+@media (max-width: 768px) {
+  .jobs {
+    flex-wrap: wrap;
+    gap: 40px !important;
+  }
+  .job-des {
+    margin-left: 5rem;
+    width: 80% !important;
+  }
+  .dropdown {
+    width: 80%;
+    height: 0px;
+  }
+  .invite {
+    flex-wrap: wrap;
+  }
+  .career-text1{
+    font-size: 20px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .jobs {
+    gap: 50px;
+    margin-left: 0px;
+  }
+  .recruitment-h {
+    padding-left: 6rem;
+  }
+  .dropdown {
+    margin-left: 5rem;
+  }
+  .job-des {
+    width: 60%;
+  }
+  .invite {
+    gap: 2rem;
+  }
+  .career-text1 {
+    font-size: 28px;
+    width: 50%;
+    bottom: 11rem;
+  }
+  .recruit-handle {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+  ul.dropdown-menu.show {
+    opacity: 1;
+  }
+  .bottom-bar {
+    gap: 8rem !important;
+  }
+  .recruitment{
+    padding-top: 0;
+  }
+}
+
+.bottom-bar {
+  font-size: 12px;
+  gap: 34rem;
+}
+@media (min-width: 1440px) {
+  .recruitment{
+    padding-top: 0;
+  }
+  .jobs {
+    margin-top: 4rem;
+    gap: 50px;
+    margin-left: 0px;
+  }
+  .recruitment-h {
+    padding-left: 10rem;
+  }
+  .dropdown{
+    margin-left: 16rem;
+  }
+  .job-des {
+    width: 35%;
+  }
+}
+
+.row {
+  width: 100%;
 }

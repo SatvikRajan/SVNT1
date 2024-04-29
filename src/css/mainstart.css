@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.bg-video{
+.bg-video {
   z-index: -1;
   left: 5%;
   position: absolute;
@@ -19,23 +19,24 @@
 }
 
 .years {
-  width: 100%;
+  width: 90%;
+  padding-left: 8rem;
+  padding-right: 8rem;
   padding-top: 50px;
   align-items: center;
   color: white;
   justify-content: center;
 }
-@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Train+One&display=swap");
 
 .number5 {
   font-size: 100px;
 }
 
 .number20 {
-  font-family: 'monospace';
+  font-family: "monospace";
   font-size: 200px;
-  font-family: 'Train One', system-ui;
-  
+  font-family: "Train One", system-ui;
 }
 
 .number60 {
@@ -43,11 +44,11 @@
 }
 
 .x {
+  font-size: 30px;
   text-align: center;
   margin-top: -40px;
   /* padding-left: 10%; */
 }
-
 
 .case-studies {
   margin: 5%;
@@ -55,10 +56,10 @@
   color: white;
   background-position: center;
   background-size: cover;
-  background-image: url(../images/Home/casestudies-bg.jpg);
-  height: 760px;
+  background-image: url(../images/Home/casestudies-bg.webp);
+  height: 780px;
   padding: 5rem;
-  padding-left: 10rem;
+  padding-left: 5rem;
 }
 
 .case-studies h1 {
@@ -73,7 +74,7 @@
   width: 25%;
   border-bottom: 1px solid white;
   padding-bottom: 5px;
-  transition: justify-content 0.5s; /* Transition justify-content over 0.5 seconds */
+  transition: justify-content 0.5s; 
 }
 
 .readmore:hover {
@@ -87,10 +88,10 @@
   filter: invert(1);
   align-self: center;
   float: right;
-  content: '';
+  content: "";
   width: 30px; /* Adjust the width of the SVG */
   height: 20px; /* Adjust the height of the SVG */
-  background: url('../images/Vector.svg') no-repeat;
+  background: url("../images/Vector.svg") no-repeat;
   opacity: 0;
   transition: opacity 0.5s, transform 0.5s; /* Transition opacity and transform over 0.5 seconds */
   transform: translateX(-10px);
@@ -99,16 +100,19 @@
   opacity: 1; /* Fade in the SVG on hover */
   transform: translateX(0); /* Move the arrow back to its original position */
 }
-.videoText{
+.videoText {
   padding: 10rem;
 }
-.videoText .video-info{
+.videoText .video-info {
   width: 70%;
+  padding-left: 7rem;
   line-height: 50px;
   height: 100%;
-  font-size: 24px;
+  font-size: 23px;
 }
-
+.n1{
+  font-weight: 500;
+}
 /* .videoText a{
   position: absolute;
   width: 374px;
@@ -118,15 +122,14 @@
 } */
 
 @media (max-width: 1024px) {
-  .case-studies{
+  .case-studies {
     padding-left: 6rem;
     padding-right: 6rem;
   }
-  .partners{
+  .partners {
     margin-top: 10rem;
     padding: 5rem;
   }
 }
 @media screen {
-  
 }

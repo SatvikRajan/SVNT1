@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom'; 
 import Logo from '../images/logo.png';
 import '../css/navbar.css'
+
 const Navbar = () => {
 
     const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -83,8 +84,8 @@ const Navbar = () => {
                             <NavItem to="/about" activeLink={activeLink} handleNavLinkClick={handleNavLinkClick}>
                                 About Us
                             </NavItem>
-                            <NavItem to="/industries" activeLink={activeLink} handleNavLinkClick={handleNavLinkClick}>
-                                Case Studies
+                            <NavItem to="/casestudies" activeLink={activeLink} handleNavLinkClick={handleNavLinkClick}>
+                                Industries
                             </NavItem>
                             <NavItem to="/services" activeLink={activeLink} handleNavLinkClick={handleNavLinkClick}>
                                 Services
@@ -121,3 +122,8 @@ const NavItem = ({ to, children, activeLink, handleNavLinkClick }) => {
 
 
 export default Navbar;
+
+
+// export default function Navbar() {
+    
+// }

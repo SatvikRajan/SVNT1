@@ -1,87 +1,69 @@
-import React from 'react';
-import img1 from '../images/Home/ITC-Limited.svg'
-import img2 from '../images/Home/aditya-birla.svg'
-import img3 from '../images/Home/AEQUS.svg'
-import img4 from '../images/Home/Ampath.svg'
-import img5 from '../images/Home/Bharat-electronics.svg'
-import img6 from '../images/Home/gm.svg'
-import img7 from '../images/Home/AFiO.svg'
-import img8 from '../images/Home/AKN.svg'
-import img9 from '../images/Home/Allergen.svg'
-import img10 from '../images/Home/Brigade.svg'
-import img11 from '../images/Home/gd-waldener.svg'
-import img12 from '../images/Home/gsl-steel-limited.svg'
-import img13 from '../images/Home/heidelbergCement.svg'
-import img14 from '../images/Home/indigo.svg'
-import img15 from '../images/Home/Zuari-cement.svg'
-import img16 from '../images/Home/KempegodwaIA.svg'
-import img17 from '../images/Home/CAIRN.svg'
-import img18 from '../images/Home/Brigade.svg'
-
+import React,{useEffect} from 'react';
+import aequs from '../images/AboutUs/client-aequs.svg'
+import allergan from '../images/AboutUs/client-allergan.svg'
+import ampath from '../images/AboutUs/client-ampath.svg'
+import kia from '../images/AboutUs/client-kia.svg'
+import brigade from '../images/AboutUs/client-brigade.svg'
+import esl from '../images/AboutUs/client-esl.svg'
+import gd from '../images/AboutUs/client-gd.svg'
+import akn from '../images/AboutUs/client-akn.svg'
+import hc from '../images/AboutUs/client-hc.svg'
+import itc from '../images/AboutUs/client-itc.svg'
+import indigo from '../images/AboutUs/client-indigo.svg'
+import afio from '../images/AboutUs/client-afio.svg'
+import abg from '../images/AboutUs/client-abg.svg'
+import gm from '../images/AboutUs/client-gm.svg'
+import britannia from '../images/AboutUs/client-britannia.svg'
+import vedanta from '../images/AboutUs/client-vedanta.svg'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Clientele() {
-
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      offset: 200,
+      delay: 500,
+      once: true
+    });
+  }, []);
   return (
-    <div className="trusted">
-      <div className="trustedtext">
+    <>
+      <h1 className='clientele' >Clientele</h1>
+      <div className="trusted">
+        <div className="trustedtext">
 
-          <h1 >Clientele</h1>
-        <p>
-          Our partners are who make us who we are. We firmly believe that people are our greatest asset and through
-          collaboration and exchange of ideas, the best ideas are brought to life. Our partners play a crucial role in
-          helping us deliver exceptional solutions and services to our clients that push the boundary further. 
+          <p data-aos='fade-right'>
+          Our most invaluable resource lies within our people, and it is collaboration that sparks the best ideas into life.
           </p>
-      </div>
-      {/* <div class="cont">
-        <div class="caro">
-          <div class="carousel__face">
-            <span className="hi">Clients</span>
-          </div>
-          <div class="carousel__face"></div>
-          <div class="carousel__face"></div>
-          <div class="carousel__face"></div>
-          <div class="carousel__face"></div>
-          <div class="carousel__face"></div>
-          <div class="carousel__face"></div>
-          <div class="carousel__face"></div>
-          <div class="carousel__face"></div>
-          <div class="carousel__face"></div>
-          <div class="carousel__face"></div>
-          <div class="carousel__face"></div>
-          <div class="carousel__face"></div>
-          <div class="carousel__face"></div>
-          <div class="carousel__face"></div>
-          <div class="carousel__face"></div>
-          <div class="carousel__face"></div>
-          <div class="carousel__face"></div>
         </div>
-      </div> */}
 
-    <section id="slideshow">
+        <section id="slideshow" data-aos='fade-left'>
           <div class="entire-content">
             <div class="content-carrousel">
-              <figure class="shadow"><img src={img1}/></figure>
-              <figure class="shadow"><img src={img2}/></figure>
-              <figure class="shadow"><img src={img3}/></figure>
-              <figure class="shadow"><img src={img4}/></figure>
-            <figure class="shadow"><img src={img5} /></figure>
-            <figure class="shadow"><img src={img6}/></figure>
-            <figure class="shadow"><img src={img7}/></figure>
-            <figure class="shadow"><img src={img8}/></figure>
-            <figure class="shadow"><img src={img9}/></figure>
-            <figure class="shadow"><img src={img10}/></figure>
-            <figure class="shadow"><img src={img11}/></figure>
-            <figure class="shadow"><img src={img12}/></figure>
-            <figure class="shadow"><img src={img13}/></figure>
-            <figure class="shadow"><img src={img14}/></figure>
-            <figure class="shadow"><img src={img15}/></figure>
-            <figure class="shadow"><img src={img16}/></figure>
-            <figure class="shadow"><img src={img17}/></figure>
-            <figure class="shadow"><img src={img18} /></figure>
-            
-        </div>
+              <figure class="shadow"><img src={aequs} alt='client'/></figure>
+              <figure class="shadow"><img src={allergan} alt='client'/></figure>
+              <figure class="shadow"><img src={ampath} alt='client'/></figure>
+              <figure class="shadow"><img src={kia} alt='client'/></figure>
+              <figure class="shadow"><img src={brigade} alt='client'/></figure>
+              <figure class="shadow"><img src={esl} alt='client'/></figure>
+              <figure class="shadow"><img src={gd} alt='client'/></figure>
+              <figure class="shadow"><img src={akn} alt='client'/></figure>
+              <figure class="shadow"><img src={hc} alt='client'/></figure>
+              <figure class="shadow"><img src={itc} alt='client'/></figure>
+              <figure class="shadow"><img src={indigo} alt='client'/></figure>
+              <figure class="shadow"><img src={afio} alt='client'/></figure>
+              <figure class="shadow"><img src={abg} alt='client'/></figure>
+              <figure class="shadow"><img src={gm} alt='client'/></figure>
+              <figure class="shadow"><img src={britannia} alt='client'/></figure>
+              <figure class="shadow"><img src={vedanta} alt='client'/></figure>
+              <figure class="shadow"><img src={akn} alt='client'/></figure>
+              <figure class="shadow"><img src={hc} alt='client'/></figure>
+
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
-    </div>
+    </>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useNavigate } from "react";
+import React, { useState, useEffect, useNavigate } from "react";
 import invite from "../images/ContactUs/invite.png";
 import search from "../images/search.jpg";
 import axios from 'axios'
@@ -7,6 +7,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../css/carousel.css'
 import '../css/career.css'
 import carrerimage from '../images/Career/careerimage.png'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Logo from '../images/svnt-logo-white-full.png';
+import { Link } from 'react-router-dom'
+
 export const CareersPage = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -16,7 +21,7 @@ export const CareersPage = () => {
   const [resume, setResume] = useState(null);
   const [showForm, setShowForm] = useState(false);
 
-  
+
   const handleSubmit = async () => {
     try {
       const formData = new FormData();
@@ -26,17 +31,17 @@ export const CareersPage = () => {
       formData.append('totalExperience', totalExperience);
       formData.append('relevantExperience', relevantExperience);
       formData.append('resume', resume);
-  
+
       var JSbody = JSON.stringify(Object.fromEntries(formData));
       console.log(JSbody)
       await fetch('http://localhost:8080/careers/api/submitForm', {
         method: 'POST',
         headers: {
-          "Content-Type" : 'application/json'
+          "Content-Type": 'application/json'
         },
         body: JSbody,
       });
-  
+
       // toast.success('Form submitted successfully');
       setName('');
       setEmail('');
@@ -55,12 +60,22 @@ export const CareersPage = () => {
   const handleGoBackClick = () => {
     setShowForm(false);
   }
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 300,
+    });
+  }, []);
 
   return (
     <div className="careers-page">
+      <Link className="logo-brand" to="/">
+        <img src={Logo} alt="SVNT Tech" height={30} />
+      </Link>
       <div className="career-start">
         <div className="career-image">
-          <img style={{ width: '100%', height: '100%', objectFit: 'scale-down' }} src={carrerimage} alt="" />
+          <img className="career-img" src={carrerimage} alt="" />
           <div className="career-text1">
             Empower your <br />
             aspirations at SVNT Infotech!
@@ -71,7 +86,7 @@ export const CareersPage = () => {
         </div>
 
         <div id="recruitment" className="recruitment">
-          <div className="recruit">
+          <div className="recruit" data-aos='fade-down'>
             <h1>Shape our Future Together!</h1>
             <p className="recruit-handle">
               With over 32 locations , SVNT presents limitless prospects while
@@ -80,11 +95,11 @@ export const CareersPage = () => {
               dedicated workforce.
             </p>
           </div>
-          <h1 style={{ textAlign: "start", paddingLeft: "18rem" }}>
+          <h1 className='recruitment-h'>
             Recruitment
           </h1>
           <div className="jobs">
-            <div class="dropdown">
+            <div class="dropdown" data-aos='fade-right'>
               <button
                 class="btn btn-secondary dropdown-career dropdown-toggle"
                 type="button"
@@ -139,7 +154,7 @@ export const CareersPage = () => {
               </ul>
             </div>
             {showForm ? (
-              <div className="job-form d-flex">
+              <div className="job-form d-flex" >
                 <div style={{ marginLeft: "-25px", marginRight: "15px" }}>
                   {" "}
                   <svg
@@ -496,15 +511,19 @@ export const CareersPage = () => {
                     className="apply custom-apply-btn"
                     onClick={handleApplyClick}
                     type="button"
+                    disabled
                   >
                     Apply Now
                   </button>
+                </div>
+                <div className="overlay">
+                  <p className="overlay-text">Coming Soon</p>
                 </div>
               </div>
             )}
           </div>
           <div className="d-flex flex-row invite">
-            <div>
+            <div data-aos='fade-right'>
               <img
                 style={{
                   maxWidth: "100%",
@@ -515,10 +534,9 @@ export const CareersPage = () => {
                 alt=""
               />
             </div>
-            <div style={{ alignSelf: "center" }}>
+            <div style={{ alignSelf: "center" }} data-aos='fade-left'>
               <h1
                 style={{
-                  color: "#0E1513",
                   fontWeight: "600",
                   marginBottom: "25px",
                 }}

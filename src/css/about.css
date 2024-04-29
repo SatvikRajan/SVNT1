@@ -1,10 +1,28 @@
+.about-us-head {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.about-img {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  width: fit-content;
+  object-fit: scale-down;
+  /* background-color: #bab3cf; */
+  /* position: absolute;
+  z-index: 10; */
+  /* background-color: antiquewhite; */
+  margin-left: -10px;
+}
+
 .about-us-head-name {
   line-height: 60px;
   letter-spacing: -1.5%;
   position: absolute;
   top: 40rem;
   font-size: 48px;
-  color: white;
+  color: rgb(255, 255, 255);
   padding-left: 9%;
 }
 
@@ -19,6 +37,8 @@
 }
 
 .svnt-info {
+  line-height: 50px;
+  font-weight: 500;
   margin-left: 5rem;
   margin-right: 5rem;
   font-size: 28px;
@@ -26,21 +46,29 @@
 }
 
 .ceo {
+  margin-bottom: -3rem;
   align-items: center;
   text-align: center;
   padding-left: 15rem;
   padding-right: 15rem;
 }
 
+.ceo-text {
+  color: #251741;
+  font-weight: 500;
+  text-align: -webkit-center;
+}
+
 .ceo-text-p {
+  color: #514567;
   font-size: 22px;
 }
 
 .managers {
+  background: linear-gradient(to right, #e2e4f4, #cdd4fd);
   margin-top: 0% !important;
   margin: 5%;
   border-radius: 100px;
-  background: linear-gradient(to right, #e2e4f4, #cdd4fd);
   padding-top: 5rem;
   padding-left: 12rem;
   padding-right: 12rem;
@@ -59,10 +87,12 @@
 .manager-line {
   gap: 20px;
 }
-
+.image-1 {
+  transition: ease-in-out 0.5s;
+}
 .image-1:hover {
   scale: 1.1;
-  filter: grayscale(100);
+  transition: ease-in-out 0.5s;
 }
 
 .company-timeline {
@@ -100,6 +130,23 @@
 .line {
   width: 20vw;
 }
+.about-img {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  height: 100%;
+  width: 100vw;
+  object-fit: scale-down;
+  margin-top: 1rem;
+}
+
+.about-clients {
+  border-radius: 80px;
+  margin: 5rem;
+  margin-right: 6rem;
+  margin-left: 6rem;
+  padding: 5rem;
+  /* background-color: #e3dbfb; */
+}
 
 @media (max-width: 768px) {
   .about-img {
@@ -116,11 +163,11 @@
   .manager-line {
     flex-wrap: wrap;
   }
-  .manager-1{
+  .manager-1 {
     padding-right: 4rem;
     padding-left: 4rem;
   }
-  
+
   .image-1 {
     width: 14rem;
   }
@@ -154,6 +201,7 @@
 
 @media (max-width: 1024px) {
   .about-img {
+    margin-top: -0.5rem;
     padding: 2rem;
   }
   .about-us-head-name {
@@ -196,4 +244,10 @@
 }
 
 @media (min-width: 1440px) {
+  .about-img {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin-top: 2rem !important;
+    /* padding: 2rem; */
+  }
 }

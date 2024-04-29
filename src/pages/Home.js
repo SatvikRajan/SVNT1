@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import '../css/carousel.css';
-import image1 from '../images/Home/carousel-image1.png';
-import image2 from '../images/Home/carousel-image2.png';
-import image3 from '../images/Home/carousel-image3.png';
-import image4 from '../images/Home/carousel-image4.png';
 import Carosuel1 from '../components/Carosuel1';
 import CaseStudiesCarousel from '../components/Carousel';
 import MainStart from '../components/MainStart';
@@ -12,6 +8,8 @@ import WhyWeDoBest from '../components/WhyWeDoBest';
 import Clientele from '../components/Clientele';
 import LastContent from '../components/LastContent';
 import '../css/home.css'
+import Logo from '../images/svnt-logo-white-full.png';
+import { Link } from 'react-router-dom'
 
 export default function Home() {
 
@@ -19,7 +17,11 @@ export default function Home() {
   return (
     <div className="home">
       {/* Carousel */}
+
       <div class="carousel1">
+        <Link className="logo-brand" to="/">
+          <img src={Logo} alt="SVNT Tech" height={30} />
+        </Link>
         <Carosuel1/>
       </div>
 
@@ -33,6 +35,7 @@ export default function Home() {
         <div className="case-studies">
           <h1>Case Studies</h1>
           <CaseStudiesCarousel />
+          <a href="">Read More</a>
         </div>
         <Clientele />
         <LastContent />

@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../css/mainstart.css';
 import bgVideo from '../images/Home/mainstart.mp4'
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function MainStart() {
   const yearsRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
@@ -44,6 +45,14 @@ export default function MainStart() {
   }, []);
 
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 200,
+      delay: 500
+    });
+  }, []);
+  useEffect(() => {
     if (isInView) {
       const yearsElement = yearsRef.current;
       const values = yearsElement.querySelectorAll('.value');
@@ -55,32 +64,34 @@ export default function MainStart() {
   }, [isInView]);
 
   return (
-    <div className="home-start">
+    <div className="home-start" data-aos='fade-up'>
       <video src={bgVideo} autoPlay loop muted playsInline className='bg-video'>
       </video>
       <div className="row years" ref={yearsRef}>
-        <div className="col text-center">
+        <div className=" text-center col">
           <span></span>
           <p className="value number5">5</p>
-          <p className="x">Clients</p>
+          <p className="x">CLIENTS</p>
         </div>
         <div className="d-flex align-items-center x1 col">
           <p className="value number20">20</p>
-          <p style={{ fontSize: '30px' }}>Years</p>
+          <p style={{ fontSize: '37px', paddingTop:'7rem' }}>Years</p>
         </div>
         <div className="text-center col">
-          <p className="value number60">1000</p>
-          <p className="x">Projects</p>
+          <div className='d-flex align-items-center justify-content-center'>
+            <p className="value number60">1000</p><span style={{fontSize: '54px'}}>+</span>
+          </div>
+          <p className="x">PROJECTS</p>
         </div>
       </div>
       <div className="videoText d-flex pt-5 text-light">
-        <p className='video-info'>
+        <p className='video-info' data-aos='fade-right'>
           Committed to integrating pioneering technology into quality service, SVNT Infotech is a premier provider of
           cutting-edge networking and communication solutions for evolving needs. With unwavering determination, we
           strive to lead in delivering innovative solutions globally.
         </p>
-        <a className="ms-auto align-self-end" href="/about">
-          <p className="fs-4 text-light w-100 readmore">Read more About us</p>
+        <a className="align-self-end" style={{marginLeft:'8.5rem'}} href="/about" data-aos='fade-left'>
+          <p className="fs-4 text-light w-100 readmore">Read more</p>
         </a>
       </div>
     </div>

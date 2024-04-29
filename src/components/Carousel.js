@@ -1,22 +1,32 @@
 import React, { useState, useRef, useEffect } from 'react';
-import ips from '../images/Home/home-carousel-genpact.png';
-import ipn from '../images/Home/home-carousel-bial.png';
-import str from '../images/Home/home-carousel-itc.png';
+import ips from '../images/Home/home-carousel-genpact.webp';
+import ipn from '../images/Home/home-carousel-genpact.webp';
+import str from '../images/Home/home-carousel-itc.webp';
 import sms from '../images/Home/home-carousel-bel';
-import is from '../images/Home/home-carousel-statocast.png';
-import sss from '../images/Home/home-carousel-jsw';
-import avs from '../images/Home/home-carousel-cfcl.png';
-import es from '../images/Home/home-carousel-aragen.png';
+import is from '../images/Home/home-carousel-statocast.webp';
+import sss from '../images/Home/home-carousel-eyeon.webp';
+import avs from '../images/Home/home-carousel-cfcl.webp';
+import es from '../images/Home/home-carousel-aragen.webp';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 function CaseStudiesCarousel() {
   const carouselRef = useRef(null);
   const [cardWidth, setCardWidth] = useState(0);
-
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      offset: 200,
+      delay: 500,
+      once: true
+    });
+  }, []);
   useEffect(() => {
     const updateCardWidth = () => {
       const carousel = carouselRef.current;
       if (carousel) {
         const carouselWidth = carousel.clientWidth;
-        let numberOfCardsPerSlide = 1; // Default to 1 card per slide
+        let numberOfCardsPerSlide = 1;
         if (carouselWidth >= 1024) {
           numberOfCardsPerSlide = 3;
         } else if (carouselWidth >= 768) {
@@ -27,7 +37,7 @@ function CaseStudiesCarousel() {
       }
     };
 
-    updateCardWidth(); // Initial call to set card width
+    updateCardWidth();
 
     const handleResize = () => {
       updateCardWidth();
@@ -64,8 +74,22 @@ function CaseStudiesCarousel() {
 
 
   return (
-    <div id="carouselExampleControls" className="carousel slide">
-      <div className="carousel-inner" ref={carouselRef} style={{ scrollSnapType: 'x mandatory', display: 'flex' }}>
+    <div data-aos='fade-up' id="carouselExampleControls" className="carousel slide">
+      <div className="carousel-inner" ref={carouselRef} style={{ scrollSnapType: 'x mandatory', display: 'flex', marginTop: '1rem' }}>
+        <div className="carousel-item5" style={{ minWidth: cardWidth }}>
+          <div className="card-1">
+            <img src={sss} alt="" />
+            <div className="card-content">
+              <h2>JSW Eye on Pellet</h2>
+              <p style={{ fontSize: '20px', textAlign: 'left' }}>
+                Delve into the revolutionary world of pelletization plants through real time system integration.
+              </p>
+              <a href="" className="readmore">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
         <div className="carousel-item5 active" style={{ minWidth: cardWidth }}>
           <div className="card-1">
             <img src={ips} alt="" />
@@ -138,21 +162,7 @@ function CaseStudiesCarousel() {
             </div>
           </div>
         </div>
-        <div className="carousel-item5" style={{ minWidth: cardWidth }}>
-          <div className="card-1">
-            <img src={sss} alt="" />
-            <div className="card-content">
-              <h2>JSW Eye on Pellet</h2>
-              <p style={{ fontSize: '20px', textAlign: 'left' }}>
-                Our systems provide comprehensive monitoring and detection capabilities, ensuring prompt response to
-                potential threats.
-              </p>
-              <a href="" className="readmore">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
+
         <div className="carousel-item5" style={{ flex: '0 0 auto', minWidth: cardWidth }}>
           <div className="card-1">
             <img src={avs} alt="" />

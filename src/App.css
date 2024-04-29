@@ -3,6 +3,19 @@ body {
   padding: 0;
   font-family: 'Poppins', sans-serif;
 }
+.logo-brand {
+  z-index: 10;
+  position: absolute;
+  display: block;
+  top: 108px;
+  left: 207px;
+}
+
+.logo-brand img {
+  width: 350px;
+  height: 42px;
+}
+
 svg.btn.search {
   height: 30px;
   width: 50px;
@@ -69,7 +82,7 @@ svg.btn.search {
   border-radius: 100px !important;
   background: linear-gradient(135deg, #251741, #5023aa);
   margin-bottom: 0px;
-  margin-top: 130px;
+  margin-top: 22rem;
 }
 
 .submit:hover {
@@ -111,23 +124,25 @@ svg.btn.search {
 }
 
 .form-body {
+  margin-left: 8rem;
+  margin-right: 8rem;
   margin-top: -3rem;
   text-align: center;
-  width: 100%;
-  background-color: #e7e8ff;
-  gap: 10rem;
+  border-radius: 80px;
+  background: linear-gradient(to right, #E2E4F4, #CDD4FD);
+  gap: 5rem;
   padding: 6rem;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
 .form-box {
+  background-color: white;
+  width: 44rem;
   border-radius: 20px;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  background-color: white;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .form-box-1 {
@@ -141,7 +156,7 @@ svg.btn.search {
   display: flex;
 }
 .write {
-  margin-top: 17px;
+  margin-top: 4px;
   text-align: start;
 }
 .write1 {
@@ -149,7 +164,7 @@ svg.btn.search {
   font-weight: 400;
 }
 p.write1 {
-  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 .inp {
   padding-left: 10px;
@@ -161,12 +176,11 @@ p.write1 {
 }
 
 .inp .label {
+  color: #747474;
   position: absolute;
   top: 20px;
   left: 12px;
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.5);
-  font-weight: 500;
+  font-size: 18px;
   transform-origin: 0 0;
   transform: translate3d(0, 0, 0);
   transition: all 0.2s ease;
@@ -186,6 +200,7 @@ p.write1 {
 }
 
 .inp input {
+  color: #514567;
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
@@ -196,8 +211,7 @@ p.write1 {
   font-size: 16px;
   font-weight: 400;
   /* background: rgba(0, 0, 0, 0.02); */
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
-  color: #000;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
   transition: all 0.15s ease;
 }
 
@@ -316,6 +330,7 @@ ul.dropdown-menu.show {
 }
 
 .job-des {
+  position: relative;
   height: 40rem;
   margin-top: 2rem;
   padding: 30px;
@@ -323,6 +338,7 @@ ul.dropdown-menu.show {
   width: 39%;
   border-radius: 20px;
   background-color: white;
+  color: #14181A;
 }
 
 .job-form {
@@ -470,7 +486,7 @@ ul.job-requirements {
 }
 
 .me {
-  height: 100%;
+  height: 25vh;
   object-fit: cover;
   align-self: center;
 }
@@ -587,6 +603,7 @@ main {
 }
 
 .whyus {
+  justify-content: center;
   /* margin-left: 5rem; */
   padding: 5rem;
   font-size: 30px;
@@ -605,7 +622,6 @@ main {
   height: 800px;
 }
 .partners {
-  background-color: #f1faff;
   background-repeat: no-repeat;
   background-position: center;
   background-image: url('./images/Home/genetec.png');
@@ -628,7 +644,6 @@ main {
 }
 
 .trusted {
-  margin-top: 10rem;
   margin-bottom: 15rem;
 }
 .shiny::after {
@@ -647,35 +662,8 @@ main {
   opacity: 0.2;
 }
 
-.last {
-  margin-right: 5%;
-  margin-left: 5%;
-  position: relative;
-  height: 700px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url(./images/Home/last-career.png);
-}
 
-.last-text {
-  text-shadow: 2px 2px 5px black;
-  position: absolute;
-  top: 50%;
-  left: 20%;
-  /* transform: translate(-50%, -50%); */
-  color: white;
-  font-size: 30px;
-  font-weight: 400;
-  text-align: center;
-}
 
-.last-text-1 {
-  padding-left: 10rem;
-  padding-top: 5rem;
-  color: white;
-  font-size: 30px;
-  font-weight: 400;
-}
 .readmore {
   /* gap: 20px; */
   display: flex;
@@ -708,35 +696,6 @@ main {
 .join:hover::after {
   opacity: 1; /* Fade in the SVG on hover */
   transform: translateX(0); /* Move the arrow back to its original position */
-}
-.last-text1 {
-  align-items: center;
-  display: flex;
-  text-shadow: 2px 2px 5px black;
-  position: absolute;
-  top: 43%;
-  left: 63%;
-  /* transform: translate(-50%, -50%); */
-  color: white;
-  font-size: 30px;
-  font-weight: 400;
-  text-align: center;
-  color: white;
-  border-bottom: 2px solid white;
-  width: 10%;
-  padding-bottom: 5px;
-  text-align: right;
-}
-
-.last-contact {
-  left: 28rem;
-  padding: 60px;
-  top: 391rem;
-  border-radius: 20px;
-  color: black;
-  background-color: #e8e8e8;
-  position: absolute;
-  width: 50%;
 }
 
 
@@ -789,4 +748,15 @@ main {
   padding-bottom: 10px;
   margin: 0 20px;
   font-size: 38px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .logo-brand{
+    top: 38px;
+    left: 90px;
+  }
+  .logo-brand img{
+    width: 310px;
+    height: 36px;
+  }
 }
