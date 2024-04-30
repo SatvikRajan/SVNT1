@@ -3,6 +3,7 @@ import '../css/card.css';
 import image1 from '../images/Home/carousel-image1.webp';
 import image2 from '../images/Home/carousel-image2.webp';
 import image3 from '../images/Home/carousel-image3.webp';
+import image4 from '../images/Home/carousel-image4.webp';
 
 function Carosuel1() {
   return (
@@ -15,7 +16,15 @@ function Carosuel1() {
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active" >
-          <img src={image1} class="d-block w-100" style={{ backgroundSize: 'cover' }} alt="..." />
+          <img src={image4} class="d-block w-100" style={{ backgroundSize: 'cover' }} alt="..." />
+          <div class="carousel-caption cc1 d-none d-md-block">
+            {/* <h1>First slide label</h1> */}
+            <p>Delve into the revolutionary world of pelletization<br/> plants through real time system integration.</p>
+            <a href="/casestudies"><p className='ccr text-white readmore'>Read More</p></a>
+          </div>
+        </div>
+        <div class="carousel-item" >
+          <img src={image1} class="d-block w-100" alt="..." />
           <div class="carousel-caption cc1 d-none d-md-block">
             {/* <h1>First slide label</h1> */}
             <p>Behind the Scenes: Our Role in<br /> Safeguarding ITC Royal Bengal</p>
@@ -37,14 +46,6 @@ function Carosuel1() {
             <p>Sky High!<br />
               Discover our vital contribution to ensuring<br /> security at Kempagowda International Airport</p>
               <a href="/casestudies"><p className='ccr text-white readmore'>Read More</p></a>
-          </div>
-        </div>
-        <div class="carousel-item" >
-          <img src={image3} class="d-block w-100" alt="..." />
-          <div class="carousel-caption cc4 d-none d-md-block">
-            {/* <h1>Third slide label</h1> */}
-            <p>Sky High! Discover our vital contribution to ensuring security at Kempagowda International Airport</p>
-            <a href="/casestudies"><p className='ccr text-white readmore'>Read More</p></a>
           </div>
         </div>
       </div>

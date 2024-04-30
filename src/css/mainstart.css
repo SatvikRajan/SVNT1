@@ -43,6 +43,24 @@
   font-size: 100px;
 }
 
+.delay{
+  animation: 5s fadeIn !important;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  90%{
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+
 .x {
   font-size: 30px;
   text-align: center;

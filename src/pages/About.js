@@ -25,6 +25,11 @@ import abg from '../images/AboutUs/client-abg.svg'
 import gm from '../images/AboutUs/client-gm.svg'
 import britannia from '../images/AboutUs/client-britannia.svg'
 import vedanta from '../images/AboutUs/client-vedanta.svg'
+import jsw from '../images/AboutUs/jsw.svg'
+import mahindra from '../images/AboutUs/mahindra.svg'
+
+import aboutbg from '../images/AboutUs/about-bg.webp';
+
 import Slider from "react-slick";
 
 export const About = () => {
@@ -41,15 +46,18 @@ export const About = () => {
     arrows: false,
     dots: false,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 2000, 
     infinite: true,
     slidesToShow: 2,
     slidesToScroll: 1,
     speed: 6000,
     rows: 2,
-    slidesPerRow: 3,
-    cssEase: "linear"
+    slidesPerRow: 2,
+    cssEase: "linear",
+    outline: false
   };
+  
+  
 
   return (
     <div className="about-us-page">
@@ -58,14 +66,11 @@ export const About = () => {
       </Link>
       <div className="about-us-head">
         <AboutCarousel />
-        {/* <img className='about-img' src={aboutbg} style={{ height: '100%', width: '100vw', objectFit: 'scale-down', marginTop: '1rem' }} alt="" /> */}
-        <p className="about-us-head-name">
-          Integrated Solutions,
-          <br /> Empowered Choices
-        </p>
-        <p className="about-us-head-name1">We are the Blueprint</p>
+        {/* <img className='about-img' src={aboutbg} style={{ height: '100%', width: '100vw', objectFit: 'scale-down' }} alt="" /> */}
+        {/* <h2 style={{position: 'absolute', top: '70%', left: '42%', fontSize: '41px', fontWeight: '400', color: '#f1faff'}}>Integrated Solutions,<br/> Empowered Choices</h2> */}
       </div>
       <div className="svnt-info" data-aos='fade-up'>
+        <h1 style={{paddingBottom: '2rem'}}>About Us</h1>
         Established in 2003, SVNT Infotech Pvt Ltd set out on a mission to revolutionize IT infrastructure solutions.
         Our philosophy is to combine international technology with local expertise to tailor solutions to clients needs. Driven by excellence, we aim to lead the global market in networking and communication solutions.
       </div>
@@ -87,61 +92,61 @@ export const About = () => {
       <Managers />
       <div className='about-clients'>
         <h1 className='client-h1'>Clients</h1>
-        <div className="slider-container" style={{ marginTop: '4rem', textAlign: '-webkit-center',  marginBottom: '5rem' }}>
+        <div className="slider-container" style={{ marginTop: '4rem', textAlign: '-webkit-center', marginBottom: '5rem' }}>
           <Slider {...settings}>
             <div>
-              <img src={aequs} alt="" />
+              <img height={300} src={aequs} alt="" />
             </div>
             <div>
-              <img src={allergan} alt="" />
+              <img height={300} src={allergan} alt="" />
             </div>
             <div>
-              <img src={ampath} alt="" />
+              <img height={300} src={ampath} alt="" />
             </div>
             <div>
-              <img src={kia} alt="" />
+              <img height={300} src={kia} alt="" />
             </div>
             <div>
-              <img src={brigade} alt="" />
+              <img height={300} src={brigade} alt="" />
             </div>
             <div>
-              <img src={esl} alt="" />
+              <img height={300} src={esl} alt="" />
             </div>
             <div>
-              <img src={gd} alt="" />
+              <img height={300} src={gd} alt="" />
             </div>
             <div>
-              <img src={akn} alt="" />
+              <img height={300} src={akn} alt="" />
             </div>
             <div>
-              <img src={hc} alt="" />
+              <img height={300} src={hc} alt="" />
+            </div>
+            {/* <div>
+              <img height={300} src={itc} alt="" />
+            </div> */}
+            {/* <div>
+              <img height={300} src={indigo} alt="" />
+            </div> */}
+            <div>
+              <img height={300} src={afio} alt="" />
             </div>
             <div>
-              <img src={itc} alt="" />
+              <img height={300} src={abg} alt="" />
             </div>
             <div>
-              <img src={indigo} alt="" />
+              <img height={300} src={gm} alt="" />
             </div>
             <div>
-              <img src={afio} alt="" />
+              <img height={300} src={britannia} alt="" />
             </div>
             <div>
-              <img src={abg} alt="" />
+              <img height={300} src={vedanta} alt="" />
             </div>
             <div>
-              <img src={gm} alt="" />
+              <img height={300} src={jsw} alt="" />
             </div>
             <div>
-              <img src={britannia} alt="" />
-            </div>
-            <div>
-              <img src={vedanta} alt="" />
-            </div>
-            <div>
-              <img src={itc} alt="" />
-            </div>
-            <div>
-              <img src={hc} alt="" />
+              <img height={300} src={mahindra} alt="" />
             </div>
           </Slider>
         </div>

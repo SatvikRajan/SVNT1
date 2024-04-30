@@ -13,6 +13,8 @@ import 'aos/dist/aos.css';
 function CaseStudiesCarousel() {
   const carouselRef = useRef(null);
   const [cardWidth, setCardWidth] = useState(0);
+  const [items, setItems] = useState([]);
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -21,6 +23,7 @@ function CaseStudiesCarousel() {
       once: true
     });
   }, []);
+
   useEffect(() => {
     const updateCardWidth = () => {
       const carousel = carouselRef.current;
@@ -50,12 +53,40 @@ function CaseStudiesCarousel() {
     };
   }, []);
 
+  useEffect(() => {
+    setItems([
+      { id: 0, image: sss, title: 'JSW Eye on Pellet', description: 'Delve into the revolutionary world of pelletization plants through real time system integration.' },
+      { id: 1, image: ips, title: 'Genpact', description: 'Optimizing Meetings with LED Panel Video Wall Installation' },
+      { id: 2, image: ipn, title: 'BIAL', description: 'Delve into Security Implementation at Kempagowda International Airport' },
+      { id: 3, image: str, title: 'ITC Hotels', description: 'A Close Examination of how SVNT implements Security Protocols at ITC.' },
+      { id: 4, image: sms, title: 'BEL(Rafael)', description: 'Explore the realm of security and management solutions, vital for safeguarding businesses against threats.' },
+      { id: 5, image: is, title: 'Om Books (Statocast)', description: 'Optimize efficiency with our integration solutions, merging systems for seamless communication and collaboration.' },
+      { id: 6, image: avs, title: 'CFCL', description: 'Elevate communication and engagement with our audio-visual solutions.' },
+      { id: 7, image: es, title: 'Aragen', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.' },
+      { id: 0, image: sss, title: 'JSW Eye on Pellet', description: 'Delve into the revolutionary world of pelletization plants through real time system integration.' },
+      { id: 1, image: ips, title: 'Genpact', description: 'Optimizing Meetings with LED Panel Video Wall Installation' },
+      { id: 2, image: ipn, title: 'BIAL', description: 'Delve into Security Implementation at Kempagowda International Airport' },
+      { id: 3, image: str, title: 'ITC Hotels', description: 'A Close Examination of how SVNT implements Security Protocols at ITC.' },
+      { id: 4, image: sms, title: 'BEL(Rafael)', description: 'Explore the realm of security and management solutions, vital for safeguarding businesses against threats.' },
+      { id: 5, image: is, title: 'Om Books (Statocast)', description: 'Optimize efficiency with our integration solutions, merging systems for seamless communication and collaboration.' },
+      { id: 6, image: avs, title: 'CFCL', description: 'Elevate communication and engagement with our audio-visual solutions.' },
+      { id: 7, image: es, title: 'Aragen', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.' },
+      { id: 0, image: sss, title: 'JSW Eye on Pellet', description: 'Delve into the revolutionary world of pelletization plants through real time system integration.' },
+      { id: 1, image: ips, title: 'Genpact', description: 'Optimizing Meetings with LED Panel Video Wall Installation' },
+      { id: 2, image: ipn, title: 'BIAL', description: 'Delve into Security Implementation at Kempagowda International Airport' },
+      { id: 3, image: str, title: 'ITC Hotels', description: 'A Close Examination of how SVNT implements Security Protocols at ITC.' },
+      { id: 4, image: sms, title: 'BEL(Rafael)', description: 'Explore the realm of security and management solutions, vital for safeguarding businesses against threats.' },
+      { id: 5, image: is, title: 'Om Books (Statocast)', description: 'Optimize efficiency with our integration solutions, merging systems for seamless communication and collaboration.' },
+      { id: 6, image: avs, title: 'CFCL', description: 'Elevate communication and engagement with our audio-visual solutions.' },
+      { id: 7, image: es, title: 'Aragen', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.' },
+    ]);
+  }, []);
+
   const handleNext = () => {
     const carousel = carouselRef.current;
     if (carousel) {
-      const newPosition = carousel.scrollLeft + cardWidth;
       carousel.scrollTo({
-        left: newPosition,
+        left: carousel.scrollLeft + cardWidth,
         behavior: 'smooth',
       });
     }
@@ -64,133 +95,32 @@ function CaseStudiesCarousel() {
   const handlePrev = () => {
     const carousel = carouselRef.current;
     if (carousel) {
-      const newPosition = carousel.scrollLeft - cardWidth;
       carousel.scrollTo({
-        left: newPosition,
+        left: carousel.scrollLeft - cardWidth,
         behavior: 'smooth',
       });
     }
   };
 
-
   return (
     <div data-aos='fade-up' id="carouselExampleControls" className="carousel slide">
       <div className="carousel-inner" ref={carouselRef} style={{ scrollSnapType: 'x mandatory', display: 'flex', marginTop: '1rem' }}>
-        <div className="carousel-item5" style={{ minWidth: cardWidth }}>
-          <div className="card-1">
-            <img src={sss} alt="" />
-            <div className="card-content">
-              <h2>JSW Eye on Pellet</h2>
-              <p style={{ fontSize: '20px', textAlign: 'left' }}>
-                Delve into the revolutionary world of pelletization plants through real time system integration.
-              </p>
-              <a href="" className="readmore">
-                Read More
-              </a>
+        {items.map((item, index) => (
+          <div key={index} className="carousel-item5" style={{ minWidth: cardWidth }}>
+            <div className="card-1">
+              <img src={item.image} alt="" />
+              <div className="card-content">
+                <h2>{item.title}</h2>
+                <p style={{ fontSize: '20px', textAlign: 'left' }}>
+                  {item.description}
+                </p>
+                <a href="/casestudies" className="readmore">
+                  Read More
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="carousel-item5 active" style={{ minWidth: cardWidth }}>
-          <div className="card-1">
-            <img src={ips} alt="" />
-            <div className="card-content">
-              <h2>Genpact</h2>
-              <p style={{ fontSize: '20px', textAlign: 'left' }}>
-                Optimizing Meetings with LED Panel Video Wall Installation
-              </p>
-              <a style={{ textAlign: 'right' }} href="" className="readmore">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="carousel-item5" style={{ minWidth: cardWidth }}>
-          <div className="card-1">
-            <img src={ipn} alt="" />
-            <div className="card-content">
-              <h2>BIAL</h2>
-              <p style={{ fontSize: '20px', textAlign: 'left' }}>
-                Delve into Security Implementation at Kempagowda International Airport
-              </p>
-              <a href="" className="readmore">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="carousel-item5" style={{ minWidth: cardWidth }}>
-          <div className="card-1">
-            <img src={str} alt="" />
-            <div className="card-content">
-              <h2>ITC Hotels</h2>
-              <p style={{ fontSize: '20px', textAlign: 'left' }}>
-                A Close Examination of how SVNT implements Security Protocols at ITC.{' '}
-              </p>
-              <a href="" className="readmore">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="carousel-item5" style={{ minWidth: cardWidth }}>
-          <div className="card-1">
-            <img src={sms} alt="" />
-            <div className="card-content">
-              <h2>BEL(Rafael)</h2>
-              <p style={{ fontSize: '20px', textAlign: 'left' }}>
-                Explore the realm of security and management solutions, vital for safeguarding businesses against
-                threats.
-              </p>
-              <a href="" className="readmore">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="carousel-item5" style={{ minWidth: cardWidth }}>
-          <div className="card-1">
-            <img src={is} alt="" />
-            <div className="card-content">
-              <h2>Om Books (Statocast)</h2>
-              <p style={{ fontSize: '20px', textAlign: 'left' }}>
-                Optimize efficiency with our integration solutions, merging systems for seamless communication and
-                collaboration.
-              </p>
-              <a href="" className="readmore">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="carousel-item5" style={{ flex: '0 0 auto', minWidth: cardWidth }}>
-          <div className="card-1">
-            <img src={avs} alt="" />
-            <div className="card-content">
-              <h2>CFCL</h2>
-              <p style={{ fontSize: '20px', textAlign: 'left' }}>
-                Elevate communication and engagement with our audio-visual solutions.
-              </p>
-              <a href="" className="readmore">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="carousel-item5" style={{ minWidth: cardWidth }}>
-          <div className="card-1">
-            <img src={es} alt="" />
-            <div className="card-content">
-              <h2>Aragen</h2>
-              <p style={{ fontSize: '20px', textAlign: 'left' }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-              </p>
-              <a href="" className="readmore">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
       <button className="carousel-control-prev" onClick={handlePrev} type="button">
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
