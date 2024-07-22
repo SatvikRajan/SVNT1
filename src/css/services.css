@@ -1,8 +1,7 @@
 .service-bg {
   height: 100%;
   width: 100%;
-  object-fit: scale-down;
-  margin-top: 1rem;
+  /* object-fit: scale-down; */
 }
 .service-head {
   margin-bottom: 3rem;
@@ -20,6 +19,10 @@
   }
   .service-title {
     font-size: 20px !important;
+  }
+
+  .g2{
+    display: block;
   }
 }
 
@@ -144,9 +147,6 @@
   left: 10rem;
 }
 
-
-
-
 .service-content {
   opacity: 0; 
 }
@@ -158,4 +158,14 @@
 @keyframes fade-in{
   0% {opacity: 0;}
   100% {opacity: 1;}
+}
+
+
+/* new css */
+
+@media (max-width: 426px) {
+  .g2{
+    width: 100%;
+
+  }
 }

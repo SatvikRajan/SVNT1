@@ -1,0 +1,197 @@
+p{
+    margin: 0;
+}
+
+.service-bg {
+    height: 100%;
+    width: 100%;
+  }
+
+  
+@media (max-width: 425px) {
+  .service-bg{
+    margin-top: 5rem;
+    padding: 1rem;
+  }
+  .services-mainhead{
+    font-size: 24px !important;
+    text-align: left !important;
+    padding-left: 1rem;
+  }
+  .css-19kzrtu {
+   padding: 0px !important;
+   padding-top: 1rem !important;
+  }
+  .css-dvqsi7-MuiTabs-root .MuiTab-root.Mui-selected {
+    min-width: 336px !important;
+  }
+  .g2{
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  .slider-images div img {
+    height: 80% !important;
+    width: 100% !important;
+  }
+  .g1{
+    margin-top: -2rem;
+  }
+  .slider-images{
+    padding-top: 0 !important;
+  }
+}
+
+  .services-main{
+    width: 100vw;
+    margin-bottom: 5%;
+    
+  }
+
+  .services-mainhead{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 42px;
+    text-align: center;
+    color: #251741;
+    /* background-color: aqua; */
+  }
+
+  .services-section{
+    /* background-color: antiquewhite; */
+    height: 100%;
+    margin: 2% 2.5% 0 2.5%;
+  }
+
+  .services-container{
+    /* background-color: rgb(255, 255, 255) !important; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .services-ul{
+    list-style-type: none;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    margin: 0;
+    /* background-color: aqua; */
+  }
+  
+  .services-details {
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 0%;
+    margin-top: -1.4%;
+    border: 10px solid #251741;
+    background-color: #f1faff !important;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: fit-content;
+    text-align: left;
+  }
+  
+
+  .custom-tabs {
+    width: 100%;
+    /* background-color: #fff; Example background color */
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .custom-tab {
+    font-size: 25px !important;
+    flex: 1 1 33%; /* Each tab takes up 33% of the parent container */
+    max-width: calc(100% / 3) !important; /* Ensure tabs don't exceed 33% width */
+    text-align: center; /* Optional: Center-align text */
+  }
+
+
+  .g1{
+    /* background-color: rgb(80, 29, 116); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 1% 2% 1%;
+  }
+
+  .g1 div{
+    margin: 1% 1% 2% 1%;
+    /* background-color: #ccc; */
+    width: 90%;
+    padding: 1.5% 4%;
+    background-color: #E9E8EC;
+    border-radius: 10px;
+    color: #251741;
+    min-height: 150px;
+    height: fit-content;
+    /* overflow-y: scroll; */
+  }
+
+  .g2{
+    /* background-color: #251741; */
+    width: 90%;
+    margin-left: 10%;
+  }
+
+  .slider-images div{
+    /* margin-top: 0.8%; */
+    height: 100%;
+    /* width: 85%; */
+    /* width: 100%; */
+    /* background-color: antiquewhite; */
+  }
+
+  .slider-images div img{
+    height: 85%;
+    width: 85%;
+  }
+
+  .slider-images{
+    /* background-color: aliceblue; */
+    height: 100%;
+    margin: 1% 0%;
+    padding-top: 13%;
+    padding-right: 0%;
+  }
+
+  .services-parent-container{
+    /* background-color: #251741; */
+    margin: auto auto;
+    width: 90%;
+  }
+
+  .services-details-container{
+    background-color: #251741;
+    
+    /* width: fit-content; */
+
+  }
+
+  .custom-services-tab{
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+  }
+
+  .g2{
+    display: inline-block;
+  }
+
+  @media (max-width: 768px){
+
+    .services-details{
+      display: flex;
+      flex-wrap: wrap-reverse;
+    }
+    
+    .g1 div{
+      max-height: 100%;
+    }
+  }

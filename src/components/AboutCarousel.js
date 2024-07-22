@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import aboutbg from '../images/AboutUs/about-bg.webp';
+import aboutbg from '../images/AboutUs/about-bg.jpg';
 import aboutbg1 from '../images/AboutUs/about-bg1.webp';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -10,7 +10,7 @@ function AboutCarousel() {
     dots: false,
     arrows: false,
     infinite: true,
-    speed: 1000,
+    speed: 100,
     autoplay: true,
     autoplaySpeed: 10000,
     slidesToShow: 1,

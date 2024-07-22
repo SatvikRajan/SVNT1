@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import companyLogo from '../images/Home/companyLogo.svg';
-import logo3 from '../images/Home/surveillance-safety-white.svg';
-import logo1 from '../images/Home/ip-surveillance-white.svg';
-import logo2 from '../images/Home/energy-white.svg';
-import logo0 from '../images/Home/ip-net-white.svg';
-import logo4 from '../images/Home/security-mgmt-white.svg';
-import logo7 from '../images/Home/integration-white.svg';
-import logo5 from '../images/Home/storage-white.svg';
-import logo6 from '../images/Home/audio-vis-white.svg';
+import logo3 from '../images/Home/surveillance-and-safety.svg';
+import logo1 from '../images/Home/IP-surveillance.svg';
+import logo2 from '../images/Home/energy.svg';
+import logo0 from '../images/Home/IP-network.svg';
+import logo4 from '../images/Home/security-and-mgmt.svg';
+import logo7 from '../images/Home/integration.svg';
+import logo5 from '../images/Home/storage.svg';
+import logo6 from '../images/Home/audio-visual.svg';
 import '../css/wwdb.css'
 import WwdbDetails from './WwdbDetails';
 import AOS from 'aos';
@@ -54,7 +54,7 @@ export default function WhyWeDoBest() {
     <div className="what-we-do-best">
       <WwdbDetails click={clickVal} index={indexVal} setClick={setClickVal} topPos={topPos} leftPos={leftPos} />
       <div className="wwdb-container">
-        <p className="wwdb-head" data-aos='fade-down' data-aos-easing="ease-in-sine">What We Do Best</p>
+        <p className="wwdb-head" data-aos='fade-down' data-aos-easing="ease-in-sine">What We Do</p>
 
         <div className='wwdb-menu-wrapper'>
           <div className="wwdb-menu">
@@ -148,7 +148,7 @@ export default function WhyWeDoBest() {
           </div>
         </div>
 
-        <div className="wwdb-learn-more">
+        <div className="wwdb-learn-more wwdb-learnmore-2">
           <a href="/services" class="btn btn-primary btn-arrow"><p className='learnMore'><span>Learn more
             <ArrowRightIcon className="fas" />
           </span></p></a>

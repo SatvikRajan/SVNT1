@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import LocationCard from '../components/LocationCard';
 import contact from '../images/ContactUs/contact-hand.jpg';
+import contactm from '../images/ContactUs/contact-handm.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../css/contact.css'
 import axios from 'axios';
-import Logo from '../images/svnt-logo-black-full.png';
-import { Link } from 'react-router-dom'
 
 const Contact = () => {
   useEffect(() => {
@@ -27,6 +26,25 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      if (!senderName || !subject || !text) {
+        setMessage('Please fill in the required fields ');
+        return;
+      }
+
+      if (senderName.length < 3) {
+        setMessage('Name should be more than 3 characters');
+        return;
+      }
+
+      if (!isValidEmail(senderEmail)) {
+        setMessage('Please provide a valid email address');
+        return;
+      }
+      if (!isValidPhoneNumber(phoneNumber)) {
+        setMessage('Please provide a valid phone number');
+        return;
+      }
+
       const response = await axios.post('http://localhost:8080/send-email', {
         senderName,
         senderEmail,
@@ -36,11 +54,19 @@ const Contact = () => {
       });
       setMessage(response.data);
       clearFormFields();
-
     } catch (error) {
       setMessage('Error sending email');
       console.error(error);
     }
+  };
+
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+  const isValidPhoneNumber = (phone) => {
+    const phoneRegex = /^\d{10}$/;
+    return phoneRegex.test(phone);
   };
 
   if (!senderName || !senderEmail || !subject || !text || !phoneNumber) {
@@ -56,14 +82,19 @@ const Contact = () => {
     setSubject('');
     setText('');
   };
-  
+
   return (
     <div className="contact-container">
       <div className="contact-image-container">
-        <Link className="logo-brand" to="/">
-          <img src={Logo} alt="SVNT Tech" height={30} />
-        </Link>
-        <img src={contact} className="contact-image" alt="" />
+        <picture>
+          <source media="(max-width: 425px)" srcSet={contactm} />
+          <source media="(min-width: 426px)" srcSet={contact} />
+          <img
+            src={contact}
+            className='contact-image'
+            alt=""
+          />
+        </picture>
         <div className="text">Need assistance?<br />
           How may we help you?</div>
       </div>
@@ -105,7 +136,7 @@ const Contact = () => {
             </label>
 
             <label for="inp" class="inp">
-              <input type="text" id="inp" value={text} rows={6}
+              <textarea style={{ height: '20rem' }} className='textarea' type="text" id="inp" value={text} rows={12}
                 onChange={(e) => setText(e.target.value)} placeholder="&nbsp;" />
               <span class="label">Message</span>
               <span class="focus-bg"></span>
@@ -120,36 +151,31 @@ const Contact = () => {
         </div>
       </div>
       <div className="location">
-        <h1 style={{ textAlign: 'start', marginLeft: '8rem', paddingTop: '3rem' }}>Our Locations</h1>
+        <h1 className='ln'>Our Locations</h1>
         <h1 className="location-name">Head Office</h1>
         <div className="offices" data-aos='fade-up'>
           <LocationCard
             title="Hyderabad"
-            address="12th Floor, DSL ABACUS IT PARK , UPPAL, Hyderabad, Telangana, India-500 039"
+            // address="12th Floor, DSL ABACUS IT PARK , UPPAL, Hyderabad, Telangana, India-500 039"
           />
         </div>
         <h1 className="location-name">Other Branches</h1>
         <div className="offices1" data-aos='fade-up'>
           <LocationCard
             title="Bangalore"
-            address="D No: 114, 52/1 , 2nd Floor, Krishna Reddy Building , 24th Main Road , HSR Layout, 2nd Sector"
+            // address="D No: 114, 52/1 , 2nd Floor, Krishna Reddy Building , 24th Main Road , HSR Layout, 2nd Sector"
           />
 
           <LocationCard
             title="Kolkata"
-            address="Balaji Apartment, Kalitala PO, Nawab Ganj, Ichapur , North 24 Paraganas , Kolkatta , West Bengal , India"
+            // address="Balaji Apartment, Kalitala PO, Nawab Ganj, Ichapur , North 24 Paraganas , Kolkatta , West Bengal , India"
           />
 
           <LocationCard
             title="Delhi"
-            address="House No.849, GROUND FLOOR , SECTOR, 47 GURGAON, (HR) 122001"
+            // address="House No.849, GROUND FLOOR , SECTOR, 47 GURGAON, (HR) 122001"
           />
         </div>
-        <p style={{ marginBottom: '60px' }}>
-          <b>Ph : </b>
-          <a href="tel:+914027153387">040-27153387 </a>,<a href="tel:+919397005115"> 9397005115 </a>,
-          <a href="tel:+918800630726"> 8800630726 </a>,<a href="tel:+919441234471"> 9441234471 </a>
-        </p>
       </div>
     </div>
   );
